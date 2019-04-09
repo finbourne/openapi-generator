@@ -101,6 +101,7 @@ public class PythonClientCodegen extends DefaultCodegen implements CodegenConfig
         languageSpecificPrimitives.add("object");
         // TODO file and binary is mapped as `file`
         languageSpecificPrimitives.add("file");
+        languageSpecificPrimitives.add("cutlabel");
 
         typeMapping.clear();
         typeMapping.put("integer", "int");
@@ -121,7 +122,7 @@ public class PythonClientCodegen extends DefaultCodegen implements CodegenConfig
         typeMapping.put("binary", "str");
         typeMapping.put("ByteArray", "str");
         // map uuid to string for the time being
-        typeMapping.put("UUID", "str");
+        typeMapping.put("cutlabel", "CutLabel");
 
         // from https://docs.python.org/3/reference/lexical_analysis.html#keywords
         setReservedWordsLowerCase(

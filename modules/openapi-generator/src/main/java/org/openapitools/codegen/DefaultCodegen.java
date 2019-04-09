@@ -961,6 +961,7 @@ public class DefaultCodegen implements CodegenConfig {
         typeMapping.put("binary", "File");
         typeMapping.put("file", "File");
         typeMapping.put("UUID", "UUID");
+        typeMapping.put("cutlabel", "CutLabel");
         //typeMapping.put("BigDecimal", "BigDecimal"); //TODO need the mapping?
 
 
@@ -1404,6 +1405,8 @@ public class DefaultCodegen implements CodegenConfig {
             return "array";
         } else if (ModelUtils.isUUIDSchema(schema)) {
             return "UUID";
+        } else if (ModelUtils.isCutLabelSchema(schema)) {
+            return "cutlabel";
         } else if (ModelUtils.isStringSchema(schema)) {
             return "string";
         } else if (ModelUtils.isFreeFormObject(schema)) {

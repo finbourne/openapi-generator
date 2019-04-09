@@ -493,6 +493,17 @@ public class ModelUtils {
         return false;
     }
 
+    public static boolean isCutLabelSchema(Schema schema) {
+        if (schema instanceof UUIDSchema) {
+            return true;
+        }
+        if (SchemaTypeUtil.STRING_TYPE.equals(schema.getType())
+                && "cutlabel".equals(schema.getFormat())) { // format: uuid
+            return true;
+        }
+        return false;
+    }
+
     public static boolean isEmailSchema(Schema schema) {
         if (schema instanceof EmailSchema) {
             return true;
